@@ -2,4 +2,29 @@
 A Data Mining assignment demonstrating data cleaning, exploratory analysis, and predictive modeling.
 # Assignment 1
 Question: Detect Digit without using Neural Networks
+Implement:
+Step 1: Download dataset from kaggle
+Step 2: Split Dataset in Val,Test,Train with the Ratio of 10,10,80 by using split-folders package
+Step 3: Then train model in google colab 
+        Where used k neighbour technique 
+        In this technique used euclidean method 
+            a: Where set k value = 5
+            b: Where set x,y array for load image and folder eg:1-9
+            c: Then load then images folder in y and images in x 
+            d: Loaded images save as a array using numpy array
+            e: Then define knn using KNeighorsClassifier(which is an function provided by sklearn) with the parameter K which set previous(K means number of neighbors to be compare with) for classified images in classes.
+            f: Fit the images in training folder and images.
+                Fit means compare the images for training folder with there respective folder label eg: if one image is found in its respective folder name is 1 then its Class declare as 1.
+            g: compare every images and there folder label and save data and export as .pkl format
+Step 4: After import model implement it to predict
+Step 5: Calculate Validation and Test Accuracy by 
+        # TRUE POSITIVE + FALSE POSITIVE / TOTAL PREDICTION
+        a:  If system predict a image is 1 and its actually 1 then its TRUE POSITIVE 
+        b: If system predict a image is 1 and its actually not 1 then its FALSE POSITIVE
+        c: If system predict a image is not 1 and its actually 1 then its FALSE NEGATIVE
+        d: If system predict a image is not 1 and its actually not 1 then its TRUE NEGATIVE
+        e: And all TRUE POSITIVE + FALSE POSITIVE + FALSE NEGATIVE + TRUE NEGATIVE occure during prediction call as TOTAL PREDICTION
+
+
+
 
