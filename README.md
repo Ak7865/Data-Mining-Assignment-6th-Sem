@@ -32,6 +32,8 @@ Step 5: Calculate Validation and Test Accuracy by
 
 A Data Mining assignment demonstrating data cleaning, exploratory analysis, and predictive modeling.
 
+<details>
+<summary>
 ---
 
 ## Assignment 1
@@ -39,7 +41,7 @@ A Data Mining assignment demonstrating data cleaning, exploratory analysis, and 
 **Question:** Detect Digit without using Neural Networks
 
 ---
-
+</summary>
 ## Implementation Steps
 
 ### Step 1 — Download Dataset
@@ -94,3 +96,4 @@ Accuracy = (TRUE POSITIVE + TRUE NEGATIVE) / TOTAL PREDICTIONS
 
 > **TOTAL PREDICTIONS** = TRUE POSITIVE + FALSE POSITIVE + FALSE NEGATIVE + TRUE NEGATIVE  
 > (all outcomes that occur during prediction)
+> </details>
