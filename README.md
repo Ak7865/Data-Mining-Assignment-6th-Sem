@@ -1,4 +1,4 @@
-# Data-Mining-Assignment-6th-Sem
+<!-- # Data-Mining-Assignment-6th-Sem
 A Data Mining assignment demonstrating data cleaning, exploratory analysis, and predictive modeling.
 # Assignment 1
 Question: Detect Digit without using Neural Networks
@@ -27,4 +27,70 @@ Step 5: Calculate Validation and Test Accuracy by
 
 
 
+ -->
+# Data-Mining-Assignment-6th-Sem
 
+A Data Mining assignment demonstrating data cleaning, exploratory analysis, and predictive modeling.
+
+---
+
+## Assignment 1
+
+**Question:** Detect Digit without using Neural Networks
+
+---
+
+## Implementation Steps
+
+### Step 1 — Download Dataset
+Download the dataset from Kaggle.
+
+---
+
+### Step 2 — Split Dataset
+Split the dataset into **Val / Test / Train** with the ratio of **10 / 10 / 80** using the `split-folders` package.
+
+---
+
+### Step 3 — Train Model (Google Colab)
+Train the model using the **K-Nearest Neighbors (KNN)** technique with the **Euclidean** distance method.
+
+| Parameter | Value |
+|-----------|-------|
+| K value | 5 |
+| Distance metric | Euclidean |
+
+**How it works:**
+
+- **a.** Set `K = 5` — this means the model compares each image to its 5 nearest neighbors
+- **b.** Define `x` and `y` arrays to hold images and their folder labels (e.g. folders 1–9)
+- **c.** Load images into `x` and their folder names into `y`
+- **d.** Save the loaded images as a **NumPy array**
+- **e.** Define KNN using `KNeighborsClassifier()` from `sklearn` — the `K` parameter sets how many neighbors to compare against for classifying an image
+- **f.** Fit the training images and labels
+  > *Fit means: compare every image with its folder label. For example, if an image is found in folder `1`, its class is declared as `1`*
+- **g.** Compare every image with its folder label, save the result, and export as **`.pkl`** format
+
+---
+
+### Step 4 — Predict
+Import the saved `.pkl` model and use it to predict new images.
+
+---
+
+### Step 5 — Calculate Validation and Test Accuracy
+
+**Formula:**
+```
+Accuracy = (TRUE POSITIVE + TRUE NEGATIVE) / TOTAL PREDICTIONS
+```
+
+| Term | Meaning |
+|------|---------|
+| **TRUE POSITIVE** | System predicts image is `1` → it actually **is** `1` ✅ |
+| **FALSE POSITIVE** | System predicts image is `1` → it actually is **not** `1` ❌ |
+| **FALSE NEGATIVE** | System predicts image is **not** `1` → it actually **is** `1` ❌ |
+| **TRUE NEGATIVE** | System predicts image is **not** `1` → it actually is **not** `1` ✅ |
+
+> **TOTAL PREDICTIONS** = TRUE POSITIVE + FALSE POSITIVE + FALSE NEGATIVE + TRUE NEGATIVE  
+> (all outcomes that occur during prediction)
