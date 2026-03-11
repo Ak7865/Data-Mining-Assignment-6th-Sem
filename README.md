@@ -36,7 +36,7 @@ A Data Mining assignment demonstrating data cleaning, exploratory analysis, and 
 <summary>
 
 
-## Assignment 1
+# Assignment 1
 
 **Question:** Detect Digit without using Neural Networks
 </summary>
