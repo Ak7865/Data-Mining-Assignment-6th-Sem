@@ -33,14 +33,14 @@ Step 5: Calculate Validation and Test Accuracy by
 A Data Mining assignment demonstrating data cleaning, exploratory analysis, and predictive modeling.
 
 <details>
-
----
 <summary>
+
+
 ## Assignment 1
 
 **Question:** Detect Digit without using Neural Networks
 </summary>
----
+
 
 ## Implementation Steps
 
