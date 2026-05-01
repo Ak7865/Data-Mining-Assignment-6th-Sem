@@ -1,4 +1,4 @@
-A Data Mining assignment demonstrating data cleaning, exploratory analysis, and predictive modeling.
+<!-- A Data Mining assignment demonstrating data cleaning, exploratory analysis, and predictive modeling.
 # Assignment 1
 Question: Detect Digit without using Neural Networks
 Implement:
@@ -23,10 +23,10 @@ Step 5: Calculate Validation and Test Accuracy by
         c: If system predict a image is not 1 and its actually 1 then its FALSE NEGATIVE
         d: If system predict a image is not 1 and its actually not 1 then its TRUE NEGATIVE
         e: And all TRUE POSITIVE + FALSE POSITIVE + FALSE NEGATIVE + TRUE NEGATIVE occure during prediction call as TOTAL PREDICTION
-
-
-
  -->
+
+
+
 # Data-Mining-Assignment-6th-Sem
 
 A Data Mining assignment demonstrating data cleaning, exploratory analysis, and predictive modeling.
