@@ -94,3 +94,12 @@ Accuracy = (TRUE POSITIVE + TRUE NEGATIVE) / TOTAL PREDICTIONS
  (all outcomes that occur during prediction)
 
  ![Output](https://github.com/Ak7865/Data-Mining-Assignment-6th-Sem/blob/main/Assignment-1/Screenshot%202026-05-01%20002036.png)
+
+
+##  Author
+
+**Syed Akhter Hussain**  
+B.Tech CSE Student  
+Barak Valley Engineering College  
+
+---

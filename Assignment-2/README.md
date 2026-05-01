@@ -1,11 +1,11 @@
-# 📧 Assignment 2 — Spam Detection (Naive Bayes)
+# Assignment 2 — Spam Detection (Naive Bayes)
 
 ## 🎯 Objective
 Build a **Spam Classifier** using the **Naive Bayes algorithm** *without using any machine learning libraries*.
 
 ---
 
-## 📂 Dataset
+##  Dataset
 
 **File:** `dataset.csv`
 
@@ -17,9 +17,9 @@ Build a **Spam Classifier** using the **Naive Bayes algorithm** *without using a
 
 ---
 
-## ⚙️ Implementation Logic
+##  Implementation Logic
 
-### 1️⃣ Load Dataset
+###  Load Dataset
 - Read CSV file using Python `csv` module  
 - Store word frequencies for both classes:
   - Spam
@@ -27,7 +27,7 @@ Build a **Spam Classifier** using the **Naive Bayes algorithm** *without using a
 
 ---
 
-### 2️⃣ Calculate Probabilities
+###  Calculate Probabilities
 Compute prior probabilities:
 
 ```
@@ -37,7 +37,7 @@ P(Spam)
 
 ---
 
-### 3️⃣ Classification Logic
+###  Classification Logic
 
 Apply **Laplace Smoothing**:
 
@@ -47,7 +47,7 @@ P(word | class) = (count + 1) / (total_words + vocab_size)
 
 ---
 
-### 4️⃣ Naive Bayes Formula
+###  Naive Bayes Formula
 
 ```
 P(C | X) = (P(X | C) * P(C)) / P(X)
@@ -59,7 +59,7 @@ Where:
 
 ---
 
-### 5️⃣ Prediction
+###  Prediction
 - Calculate probabilities for both classes  
 - Compare results  
 - Output classification:
@@ -72,22 +72,23 @@ NOT SPAM
 
 ---
 
-## 📸 Output Screenshot
+##  Output Screenshot
 
 Add your output screenshot in the repository:
 
 ```
-output.png
+![Output](https://github.com/Ak7865/Data-Mining-Assignment-6th-Sem/blob/main/Assignment-1/Screenshot%202026-05-01%20002036.png)
 ```
 
 ---
 
-## 💻 Sample Output
+##  Sample Output
 
-[!Output]()
+
+[!Output](https://github.com/Ak7865/Data-Mining-Assignment-6th-Sem/blob/main/Assignment-1/Screenshot%202026-05-01%20002036.png)
 ---
 
-## 🛠️ Features
+##  Features
 
 - ✅ No external ML libraries  
 - ✅ Lightweight implementation  
@@ -96,7 +97,7 @@ output.png
 
 ---
 
-## ⚠️ Limitations
+##  Limitations
 
 - Assumes **word independence**
 - Accuracy depends on dataset quality
@@ -104,7 +105,7 @@ output.png
 
 ---
 
-## 🚀 Future Improvements
+##  Future Improvements
 
 - Add text preprocessing (stopwords, stemming)
 - Use TF-IDF
@@ -113,7 +114,7 @@ output.png
 
 ---
 
-## 👨‍💻 Author
+##  Author
 
 **Syed Akhter Hussain**  
 B.Tech CSE Student  
