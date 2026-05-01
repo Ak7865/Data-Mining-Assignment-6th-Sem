@@ -32,5 +32,5 @@ def predict_image(image_path):
 
 
 if __name__ == "__main__":
-    image_path = "DermMel/test/Melanoma/AUG_0_11.jpeg"
+    image_path = "DermMel/test/NotMelanoma/ISIC_0024307.jpg"
     predict_image(image_path)
