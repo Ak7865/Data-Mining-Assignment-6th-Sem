@@ -70,17 +70,6 @@ or
 NOT SPAM
 ```
 
----
-
-##  Output Screenshot
-
-Add your output screenshot in the repository:
-
-```
-https://github.com/Ak7865/Data-Mining-Assignment-6th-Sem/blob/main/Assignment-2/image.png
-```
-
----
 
 ##  Sample Output
 
