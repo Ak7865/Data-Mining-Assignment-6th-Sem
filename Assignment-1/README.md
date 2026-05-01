@@ -93,4 +93,4 @@ Accuracy = (TRUE POSITIVE + TRUE NEGATIVE) / TOTAL PREDICTIONS
  **TOTAL PREDICTIONS** = TRUE POSITIVE + FALSE POSITIVE + FALSE NEGATIVE + TRUE NEGATIVE  
  (all outcomes that occur during prediction)
 
- [!Output](Screenshot 2026-05-01 002036.png)
+ ![Output](Screenshot 2026-05-01 002036.png)
