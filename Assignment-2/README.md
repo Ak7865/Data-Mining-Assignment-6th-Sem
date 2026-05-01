@@ -77,7 +77,7 @@ NOT SPAM
 Add your output screenshot in the repository:
 
 ```
-![Output](https://github.com/Ak7865/Data-Mining-Assignment-6th-Sem/blob/main/Assignment-1/Screenshot%202026-05-01%20002036.png)
+https://github.com/Ak7865/Data-Mining-Assignment-6th-Sem/blob/main/Assignment-2/image.png
 ```
 
 ---
@@ -85,7 +85,7 @@ Add your output screenshot in the repository:
 ##  Sample Output
 
 
-[!Output](https://github.com/Ak7865/Data-Mining-Assignment-6th-Sem/blob/main/Assignment-1/Screenshot%202026-05-01%20002036.png)
+![Output](https://github.com/Ak7865/Data-Mining-Assignment-6th-Sem/blob/main/Assignment-2/image.png)
 ---
 
 ##  Features
