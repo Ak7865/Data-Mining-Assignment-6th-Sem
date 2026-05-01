@@ -1,185 +1,162 @@
 # Assignment 4 — Skin Cancer Detection (CNN - MobileNetV2)
 
-## 🎯 Objective
-Build a **Deep Learning model** to classify skin images into:
+## Objective
+Build a deep learning model to classify skin lesion images into the following two categories:
 
 - **Melanoma (Cancer)**
 - **Not Melanoma (Non-Cancer)**
 
-using **Transfer Learning (MobileNetV2)**.
+The project uses **Transfer Learning with MobileNetV2** to improve classification accuracy and training efficiency.
 
----
+## Dataset
+The dataset is organized into separate folders for training, validation, and testing.
 
-## 📂 Dataset
-
-Dataset folder structure:
+```text
 DermMel/
 ├── train_sep/
-│ ├── Melanoma/
-│ └── NotMelanoma/
+│   ├── Melanoma/
+│   └── NotMelanoma/
 ├── valid/
 └── test/
+```
 
+### Dataset Notes
+- Images are loaded using `flow_from_directory()`.
+- Class labels are automatically assigned from folder names.
+- Preprocessing is applied using `preprocess_input` from MobileNetV2.
 
-- Images are loaded using `flow_from_directory()`
-- Classes are automatically detected from folder names
+## Implementation Logic
 
----
+### Load Dataset
+The dataset is loaded using `ImageDataGenerator`, which handles image loading, preprocessing, and augmentation.
 
-## ⚙️ Implementation Logic
-
-### 🔹 Load Dataset
-- Load image dataset using `ImageDataGenerator`
-- Apply preprocessing using:
-preprocess_input (MobileNetV2)
-
-
----
-
-### 🔹 Data Augmentation
-Applied on training data:
-
+### Data Augmentation
+The following augmentation techniques are applied to training images:
 - Rotation
 - Zoom
-- Horizontal Flip
+- Horizontal flip
 
----
+These transformations help improve model generalization and reduce overfitting.
 
-### 🔹 Class Weights
-To handle class imbalance:
+### Class Weights
+To handle class imbalance, class weights are calculated using:
+
+```python
 compute_class_weight()
+```
 
----
+This ensures that minority classes receive appropriate importance during training.
 
-### 🔹 Model Architecture
+## Model Architecture
+The model is built using **MobileNetV2** pretrained on ImageNet as the base model.
 
-- Base Model: **MobileNetV2 (Pretrained on ImageNet)**
-- Custom Layers:
-  - GlobalAveragePooling
-  - Dense (128, ReLU)
-  - BatchNormalization
-  - Dropout (0.4)
-  - Output Layer (Softmax - 2 classes)
+### Base Model
+- **MobileNetV2** (pretrained on ImageNet)
 
----
+### Custom Layers
+- GlobalAveragePooling2D
+- Dense layer with 128 units and ReLU activation
+- BatchNormalization
+- Dropout with rate 0.4
+- Output layer with Softmax activation for 2 classes
 
-### 🔹 Training Strategy
+## Training Strategy
 
-#### Stage 1 — Transfer Learning
-- Freeze base model
-- Train only top layers
+### Stage 1 — Transfer Learning
+- Freeze all layers of the base MobileNetV2 model
+- Train only the custom classification head
 
-#### Stage 2 — Fine Tuning
-- Unfreeze last 30 layers
-- Reduce learning rate
-- Improve model performance
+### Stage 2 — Fine Tuning
+- Unfreeze the last 30 layers of the base model
+- Reduce the learning rate
+- Continue training to improve feature adaptation and performance
 
----
+## Callbacks
+The following callbacks are used during training:
 
-### 🔹 Callbacks
+- `EarlyStopping` — Stops training when validation performance stops improving
+- `ReduceLROnPlateau` — Reduces learning rate when progress stalls
+- `ModelCheckpoint` — Saves the best model during training
 
-- EarlyStopping → Stops training when no improvement  
-- ReduceLROnPlateau → Reduces learning rate  
-- ModelCheckpoint → Saves best model  
+## Model Saving
+The trained models are saved as:
 
----
+- `cancer_model.h5` — Final trained model
+- `best_model.h5` — Best-performing model based on validation results
 
-### 🔹 Model Saving
+## Evaluation
+The model is evaluated using the following metrics:
 
-- `cancer_model.h5` → Final trained model  
-- `best_model.h5` → Best model during training  
+- Confusion Matrix
+- Classification Report
+- Accuracy
+- Precision
+- Recall
+- F1 Score
 
----
+### Accuracy Formula
+$$
+\text{Accuracy} = \frac{\text{True Positive} + \text{True Negative}}{\text{Total Predictions}}
+$$
 
-### 🔹 Evaluation
+## Prediction Script (`Predict.py`)
 
-Metrics used:
+### Input
+Example input image path:
 
-- Confusion Matrix  
-- Classification Report  
-
----
-
-### 🔹 Accuracy Formula
-Accuracy = (TRUE POSITIVE + TRUE NEGATIVE) / TOTAL PREDICTIONS
-
-
----
-
-## 🚀 Prediction (Predict.py)
-
-### 🔹 Input
-- Image file path:
+```text
 DermMel/test/Melanoma/AUG_0_11.jpeg
+```
 
+### Prediction Logic
+The prediction script performs the following steps:
 
----
+1. Loads the trained model from `cancer_model.h5`
+2. Resizes the image to `224 x 224`
+3. Applies MobileNetV2 preprocessing
+4. Predicts the class label
+5. Displays the confidence score
 
-### 🔹 Prediction Logic
-
-- Load trained model (`cancer_model.h5`)
-- Resize image to 224×224  
-- Apply preprocessing  
-- Predict class  
-
----
-
-### 🔹 Output
+### Sample Output
+```text
 Prediction: Melanoma
 Confidence: 97.45%
+```
 
-
----
-
-## 📷 Sample Output
+## Sample Output Images
 
 ![Output 1](https://github.com/Ak7865/Data-Mining-Assignment-6th-Sem/blob/main/Assignment-4/image.png)
 
 ![Output 2](https://github.com/Ak7865/Data-Mining-Assignment-6th-Sem/blob/main/Assignment-4/image1.png)
 
----
 
----
-
-## 📷 Confusion Matrics
-
+## Confusion Matrix
 ![Output](https://github.com/Ak7865/Data-Mining-Assignment-6th-Sem/blob/main/Assignment-4/confusion_matrix.png)
 
+## Features
+- Deep learning model using CNN
+- Transfer learning with MobileNetV2
+- Data augmentation support
+- Class imbalance handling
+- Model saving and loading
+- Image-based prediction system
 
----
+## Limitations
+- Requires good dataset quality
+- Needs GPU for faster training
+- May overfit on small datasets
+- Performance depends on class balance and dataset diversity
 
-## ✅ Features
+## Future Improvements
+- Add Grad-CAM visualization for explainability
+- Use larger and more diverse datasets
+- Build a web interface for prediction
+- Try advanced architectures such as EfficientNet
 
-- Deep Learning model using CNN  
-- Transfer Learning (MobileNetV2)  
-- Data Augmentation  
-- Class imbalance handling  
-- Model saving and loading  
-- Image-based prediction  
-
----
-
-## ⚠️ Limitations
-
-- Requires good dataset quality  
-- Needs GPU for faster training  
-- Overfitting possible on small datasets  
-
----
-
-## 🔮 Future Improvements
-
-- Add Grad-CAM visualization  
-- Use larger datasets  
-- Build web interface  
-- Try advanced models (EfficientNet)  
-
----
-
-## 👨‍💻 Author
-
+## Author
 **Syed Akhter Hussain**  
 B.Tech CSE Student  
-Barak Valley Engineering College  
+Barak Valley Engineering College
 
 ---
+
