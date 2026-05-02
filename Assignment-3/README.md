@@ -80,8 +80,7 @@ Create the following visualizations:
 - Confusion Matrix (Heatmap)
 - Accuracy Comparison (Train vs Validation vs Test)
 
-Save the output figure as:
-- `iris_model_performance.png`
+
 
 #### Step 9 — Example Prediction
 Test the model with sample inputs:
